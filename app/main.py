@@ -1,13 +1,23 @@
+from datetime import datetime, timedelta
+from typing import Any, Optional, List, Dict
+
+import jwt
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey, Boolean
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship, Session
 from passlib.context import CryptContext
 from pydantic import BaseModel
-from datetime import datetime, timedelta
-import jwt
-from typing import Any, Optional, List, Dict
+from sqlalchemy import (
+    create_engine,
+    Column,
+    Integer,
+    String,
+    DateTime,
+    ForeignKey,
+    Boolean,
+)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship, Session
+
 
 
 # --- CONFIG ---
