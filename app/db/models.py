@@ -10,4 +10,5 @@ class Booking(Base):
     pet_name = Column(String, nullable=False)
     service = Column(String, nullable=False)
     appointment_time = Column(DateTime, nullable=False)
-    is_cancelled = Column(Boolean, default=False)
+    is_cancelled = Column(Boolean, default=False, nullable=False)  # Explicitly set nullable=False
+

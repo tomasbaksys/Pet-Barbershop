@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pet-barbershop-backend
+    env: python
+    plan: free
+    region: frankfurt  # or: oregon, singapore, etc.
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: DATABASE_URL
+        value: sqlite:///./backend/barbershop.db  # adjust if you switch to PostgreSQL

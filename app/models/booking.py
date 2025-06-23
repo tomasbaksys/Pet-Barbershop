@@ -1,7 +1,5 @@
-from typing import Any, Optional, List, Dict
 from pydantic import BaseModel, Field
 from datetime import datetime
-from typing import Optional
 
 class BookingCreate(BaseModel):
     user_id: int
@@ -19,4 +17,5 @@ class BookingResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
 
